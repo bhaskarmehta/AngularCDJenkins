@@ -12,7 +12,8 @@ pipeline{
                   script {
                     sh ('aws eks update-kubeconfig --name mycluster --region us-east-1')
                     sh "kubectl apply -f Deployments/"
-                }
+                    }
+               }
             }
         }
     }
