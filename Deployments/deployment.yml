@@ -17,7 +17,7 @@ spec:
       serviceAccountName: my-sa
       containers:
       - name: angularcontanier
-        image: bhasmeht/angular-image:1.1.9 # {"$imagepolicy": "flux-system:mypolicy"}
+        image: bhasmeht/angular-image:2.0.0 # {"$imagepolicy": "flux-system:mypolicy"}
         ports:
         - containerPort: 80
         imagePullPolicy: Always
