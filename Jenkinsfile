@@ -10,6 +10,10 @@ pipeline{
             steps {
                 withAWS(credentials: 'aws_credentials', region: 'us-east-1') {
                   script { 
+                    sh "curl https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscliv2.zip"
+                    sh "sudo apt install unzip"  
+                    sh "unzip awscliv2.zip"
+                    sh "sudo ./aws/install"
                     sh ('aws eks update-kubeconfig --name mycluster --region us-east-1')
                     sh "kubectl apply -f Deployments/"
                     }
