@@ -18,8 +18,8 @@ pipeline{
                     sh "curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.11/2023-03-17/bin/linux/amd64/kubectl"
                     sh "chmod +x ./kubectl"
                     sh "mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin"
-                    sh "kubectl version"
-                    sh "kubectl apply -f Deployments/"
+                    sh "/root/bin/kubectl version"
+                    sh "/root/bin/kubectl apply -f Deployments/"
                     }
                }
             }
