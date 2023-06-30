@@ -14,6 +14,9 @@ pipeline{
                     sh "apt install unzip"  
                     sh "unzip awscliv2.zip"
                     sh "./aws/install"
+                    sh "curl -O https://s3.us-west-2.amazonaws.com/amazon-eks/1.24.11/2023-03-17/bin/linux/amd64/kubectl"
+                    sh "chmod +x ./kubectl"
+                    sh "mkdir -p $HOME/bin && cp ./kubectl $HOME/bin/kubectl && export PATH=$PATH:$HOME/bin"
                     sh ('aws eks update-kubeconfig --name mycluster --region us-east-1')
                     sh "kubectl apply -f Deployments/"
                     }
